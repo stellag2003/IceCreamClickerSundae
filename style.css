@@ -1,10 +1,21 @@
 
-img
+body, html {
+    height: 100%; /* Garantir que o body e html ocupem 100% da altura da tela */
+    margin: 0; /* Remove margens extras */
+    overflow: hidden; /* Remove a barra de rolagem */
+}
+
+.inicio
 {
-    background-size: cover;
-    background-size: cover; /* Faz a imagem cobrir toda a tela */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita repetições */
-    height: 100vh; /* Garante que o fundo ocupe a tela inteira */
-    margin: 0; /* Remove margens para não dar espaçamento extra */
+    background-size: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.hidden {
+    display: none;
 }
