@@ -1,3 +1,4 @@
+
 let sorvete = 0;
         let geradorPorSegundo = 0;
         let custo = {
