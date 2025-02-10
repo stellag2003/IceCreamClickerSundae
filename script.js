@@ -3,7 +3,7 @@ let sorvete = 0;
         let custo = {
             pinguim: 10,
             urso: 50,
-            carrinho: 600,
+            carrinhoSorvete: 600,
             sorveteria: 1000
         };
         let addClick = 1;
@@ -32,7 +32,7 @@ let sorvete = 0;
             document.getElementById("gerador").textContent = geradorPorSegundo;
             document.getElementById("custoPinguim").textContent = custo.pinguim;
             document.getElementById("custoUrso").textContent = custo.urso;
-            document.getElementById("custoCarrinho").textContent = custo.carrinho;
+            document.getElementById("custoCarrinho").textContent = custo.carrinhoSorvete;
             document.getElementById("custoSorveteria").textContent = custo.sorveteria;
         }
         
