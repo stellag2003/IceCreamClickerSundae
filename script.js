@@ -1,7 +1,8 @@
 
-let sorvete = 0;
-        let geradorPorSegundo = 0;
-        let custo = {
+        console.log(window.innerWidth);  // Largura da tela
+        console.log(window.innerHeight); // Altura da tela
+
+        const precos = {
             pinguim: 10,
             urso: 50,
             carrinhoSorvete: 600,
@@ -35,6 +36,33 @@ let sorvete = 0;
             document.getElementById("custoUrso").textContent = custo.urso;
             document.getElementById("custoCarrinho").textContent = custo.carrinhoSorvete;
             document.getElementById("custoSorveteria").textContent = custo.sorveteria;
+        }
+
+        function atualizarPrecos() {
+            const ursoPreco = document.getElementById("ursoPreco");
+            const carrinhoPreco = document.getElementById("carrinhoPreco");
+            const sorveteriaPreco = document.getElementById("sorveteriaPreco");
+        
+            // Mostra o preço do urso se o número de sorvetes for >= ao preço atual
+            if (sorvetes >= precos.urso) {
+                ursoPreco.textContent = `R$ ${precos.urso.toFixed(2)}`;
+            } else {
+                ursoPreco.textContent = "";
+            }
+        
+            // Mostra o preço do carrinho se o número de sorvetes for >= ao preço atual
+            if (sorvetes >= precos.carrinhoSorvete) {
+                carrinhoPreco.textContent = `R$ ${precos.carrinhoSorvete.toFixed(2)}`;
+            } else {
+                carrinhoPreco.textContent = "";
+            }
+        
+            // Mostra o preço da sorveteria se o número de sorvetes for >= ao preço atual
+            if (sorvetes >= precos.sorveteria) {
+                sorveteriaPreco.textContent = `R$ ${precos.sorveteria.toFixed(2)}`;
+            } else {
+                sorveteriaPreco.textContent = "";
+            }
         }
         
         setInterval(() => {

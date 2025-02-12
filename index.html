@@ -4,20 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ice Cream Clicker Sundae</title>
-    <img src="imagens/sorvetinhos.jpg" alt="">
-   <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagens/icone.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Ice Cream Clicker Sundae</h1>
-    <p>Sorvetes: <span id="sorvete">0</span></p>
-    <p>Geradores por segundo: <span id="gerador">0</span></p>
-    <button onclick="ganharSorvete()">🍦 Clique para ganhar sorvete</button>
-    <h2>Loja</h2>
-    <button onclick="comprarItem('pinguim')">Pinguim (+5/s) - <span id="custoPinguim">10</span></button>
-    <button onclick="comprarItem('urso')">Urso Polar (+10/s) - <span id="custoUrso">50</span></button>
-    <button onclick="comprarItem('carrinhoSorvete')">Carrinho de Sorvete (+40/click) - <span id="custoCarrinho">600</span></button>
-    <button onclick="comprarItem('sorveteria')">Sorveteria (+100/s) - <span id="custoSorveteria">1000</span></button>
-    
+    <div class="inicio">
+        <h1 class="texto-com-fundo">Ice Cream Clicker Sundae</h1>
+
+        <p class="titulo texto-com-fundo">Sorvetes: <span id="sorvete">0</span></p>
+
+        <p class="titulo texto-com-fundo">Sorvetes por segundo: <span id="gerador">0</span></p>
+
+        <img src="imagens/sorvete.jpg" onclick="ganharSorvete()" class="btnSorvete imagemPrincipal" alt="Sorvete" width="300" height="300">
+
+        <h2 class="texto-com-fundo">Loja</h2>
+        <div class="container">
+            <div class="item">
+                <img src="imagens/pinguim.png" onclick="comprarItem('pinguim')" class="btn" alt="pinguim">
+                <p class="preco">
+                    <img src="imagens/icone.png" alt="Ícone" width="20" height="20"> 10
+                </p>
+            </div>
+
+            <div class="item">
+                <img src="imagens/polar-bear-5152169_1280.webp" onclick="comprarItem('urso')" class="btn" alt="urso">
+                <p class="preco">
+                    <img src="imagens/icone.png" alt="Ícone" width="20" height="20"> 50
+                </p>
+            </div>
+
+            <div class="item">
+                <img src="imagens/carrinho.png" onclick="comprarItem('carrinhoSorvete')" class="btn" alt="carrinhoSorvete">
+                <p class="preco">
+                    <img src="imagens/icone.png" alt="Ícone" width="20" height="20"> 600
+                </p>
+            </div>
+
+            <div class="item">
+                <img src="imagens/sorveteria.png" onclick="comprarItem('sorveteria')" class="btn" alt="sorveteria">
+                <p class="preco">
+                    <img src="imagens/icone.png" alt="Ícone" width="20" height="20"> 1000
+                </p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
