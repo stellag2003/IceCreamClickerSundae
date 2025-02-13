@@ -1,105 +1,244 @@
-body, html {
-    height: 100%; /* Garantir que o body e html ocupem 100% da altura da tela */
-    margin: 0; /* Remove margens extras */
-    overflow: hidden; /* Remove a barra de rolagem */
-}
-
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
     text-align: center;
-    position: relative; /* Garante que fique acima do fundo */
+}
+
+.intro-container {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    max-width: 700px;
+    height: 850px;
+}
+
+h1 {
+    font-size: 1.2em;
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+.imgLogo {
+    justify-content: center;
+    align-items: center;
+    width: 680px;
+    height: 400px;
+    animation: pulsar 1.5s infinite;
+}
+
+p {
+    font-size: 27px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.btn-jogar {
+    background-color: #e62d5b;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 120px;
+    height: 70px;
+    animation: pulsar 1.5s infinite;
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.btn-jogar:hover {
+    background-color: #f17090;
+}
+
+/* Estilo para a página intro */
+body.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
     z-index: 1;
-    display: flex; /* Usa flexbox para alinhar os elementos */
-    flex-direction: column; /* Organiza os elementos em coluna */
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
-    font-size: 30px; /* Tamanho padrão */
-    
+    font-size: 1.2em;
+    background-color: #f0f8ff; /* Cor de fundo de fallback */
 }
 
-.imagemPrincipal {
-    font-size: 24px; /* Tamanho do ícone */
-    border-radius: 10px; /* Bordas arredondadas */
-    color: #000; /* Cor do ícone */
-    transition: transform 0.3s; /* Efeito de zoom ao passar o mouse */
-    cursor: pointer; /* Mostra o cursor de clique */
-    display: inline-block; /* Necessário para o transform funcionar */
+/* Fundo com imagem */
+body::before {
+    content: '';
+    background-image: url('imagens/sorvetinhos.jpg');
+    opacity: 0.7; /* 70% de opacidade */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
-.imagemPrincipal:hover {
-    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
-}
-
-.titulo {
-    font-size: 1.5rem; /* 1.5 vezes o tamanho da fonte do body (16px * 1.5 = 24px) */
-    margin: 10px 0; /* Espaçamento entre os elementos */
-}
-
+/* Contêiner principal */
 .inicio {
+    background-color: rgba(255, 255, 255, 0.7); /* Fundo semi-transparente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    max-width: 800px;
+    max-height: 900px;
+    width: 90%; /* Responsivo */
+    margin: 20px; /* Espaçamento externo */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%; /* Ocupa toda a largura */
 }
 
-body::before {
-    content: ''; /* Necessário para o pseudo-elemento funcionar */
-    background-image: url('imagens/sorvetinhos.jpg'); 
-    opacity: 0.7; /* 50% de transparência */
-    background-repeat: no-repeat; /* Evita repetições */
-    background-size: cover; /* Faz a imagem cobrir toda a tela, cortando o excesso */
-    background-position: center; /* Centraliza a imagem */
-    position: fixed; /* Fixa o fundo para rolar com a página */
-    top: 0;
-    left: 0;
-    width: 100%; /* Ocupa toda a largura */
-    height: 100%; /* Ocupa toda a altura */
-    z-index: -1; /* Coloca o fundo atrás dos elementos */
+/* Título */
+.titulo {
+    font-size: 1.5rem;
+    color: #ff6f61;
+    margin-bottom: 20px;
 }
 
+/* Imagem principal */
+.imagemPrincipal {
+    width: 480px;
+    height: 500px;
+    max-width: 100%; /* A imagem não ultrapassa a largura do contêiner */
+    max-height: 100%; /* A imagem não ultrapassa a altura do contêiner */
+    transition: transform 0.4s;
+    cursor: pointer;
+}
+
+.imagemPrincipal:hover {
+    transform: scale(1.1);
+}
+
+/* Botões */
 .btn {
-    width: 100px; /* Tamanho das imagens */
-    height: auto; /* Mantém a proporção */
-    cursor: pointer; /* Mostra o cursor de clique */
-    border: 2px solid #ccc; /* Borda ao redor das imagens */
-    border-radius: 10px; /* Bordas arredondadas */
-    transition: transform 0.3s; /* Efeito de zoom ao passar o mouse */
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    margin: 10px;
 }
 
 .btn:hover {
-    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
-    border-color: #4BE0FF; /* Muda a cor da borda ao passar o mouse */
+    transform: scale(1.1);
+    border-color: #4BE0FF;
 }
 
+/* Container dos itens */
 .container {
-    display: flex; /* Organiza os itens em uma linha */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    gap: 20px; /* Espaçamento entre os itens */
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha se necessário */
-    margin-top: 20px; /* Espaçamento acima do container */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
+/* Itens individuais */
 .item {
-    text-align: center; /* Centraliza o conteúdo */
-    margin: 10px; /* Espaçamento entre os itens */
+    position: relative;
+    width: 150px;
+    height: 200px; /* Altura fixa para o contêiner */
+    text-align: center;
+    margin: 10px;
+}
+
+.bloqueio{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bloqueio {
+    z-index: 1;
+    display: block;
+}
+
+.btn {
+    z-index: 0;
+    display: none;
 }
 
 .preco {
     font-size: 18px;
     font-weight: bold;
-    color: white; ;
-    margin-top: 5px; /* Espaço entre a imagem e o preço */
+    color: white;
+    margin-top: 150px; /* Ajuste a margem para posicionar o preço abaixo da imagem */
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px; /* Espaçamento interno */
-    border-radius: 5px; /* Bordas arredondadas */
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+/* Texto com fundo */
 .texto-com-fundo {
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
-    color: white; /* Cor do texto */
-    display: inline-block; /* Faz o fundo cobrir apenas o texto */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 10px 20px; /* Espaçamento interno */
-    margin: 10px 0; /* Espaçamento externo */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px 0;
+}
+
+/* Tooltips */
+[title] {
+    position: relative;
+}
+
+[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+.btn-volume {
+    width: 55px;
+    height: 55px;
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 10px; /* Distância do fundo */
+    right: 10px; /* Distância da direita */
+    color: #da3e65; /* Cor do texto/ícone */
+    border: none;
+    border-radius: 50%; /* Botão redondo */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; /* Tamanho do ícone */
+    animation: pulsar 1.5s infinite;
 }

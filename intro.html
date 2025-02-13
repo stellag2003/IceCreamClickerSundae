@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Clicker Sundae</title>
+    <link rel="icon" href="imagens/icone.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="inicio">
+        <p class="titulo texto-com-fundo">Sorvetes: <span id="sorvete">0</span></p>
+        <p class="titulo texto-com-fundo">Sorvetes por segundo: <span id="gerador">0</span></p>
+        <img src="imagens/sorvete.png" onclick="ganharSorvete()" class="btnSorvete imagemPrincipal" alt="Sorvete" width="300" height="300">
+
+        <h2 class="texto-com-fundo">Loja</h2>
+        <div class="container">
+            <div class="item" data-preco="10">
+                <img src="imagens/pinguim.png" onclick="comprarItem('pinguim')" class="btn" alt="pinguim"
+                     title="Gera 5 sorvetes por segundo. O preço dobrará após a compra.">
+                <p class="preco" id="pinguimPreco" style="display: block;">
+                    <img src="imagens/icone.png" alt="Ícone" width="20" height="20"> 10
+                </p>
+            </div>
+            
+            <div class="item" data-preco="50">
+                <img src="imagens/bloqueio.png" alt="Bloqueio" class="bloqueio" style="display: block;">
+                <img src="imagens/urso.png" onclick="comprarItem('urso')" class="btn" alt="urso" style="display: none;"
+                     title="Gera 10 sorvetes por segundo. O preço dobrará após a compra.">
+                <p class="preco" id="ursoPreco" style="display: none;">
+                    <img src="imagens/icone.png" alt="Ícone" width="20" height="20"> 50
+                </p>
+            </div>
+            
+            <div class="item" data-preco="600">
+                <img src="imagens/bloqueio.png" alt="Bloqueio" class="bloqueio" style="display: block;">
+                <img src="imagens/carrinho.png" onclick="comprarItem('carrinhoSorvete')" class="btn" alt="carrinhoSorvete" style="display: none;"
+                     title="Aumenta o ganho por clique em 40 sorvetes. O preço dobrará após a compra.">
+                <p class="preco" id="carrinhoPreco" style="display: none;">
+                    <img src="imagens/icone.png" alt="Ícone" width="20" height="20"> 600
+                </p>
+            </div>
+            
+            <div class="item" data-preco="1000">
+                <img src="imagens/bloqueio.png" alt="Bloqueio" class="bloqueio" style="display: block;">
+                <img src="imagens/sorveteria.png" onclick="comprarItem('sorveteria')" class="btn" alt="sorveteria" style="display: none;"
+                     title="Gera 100 sorvetes por segundo. O preço dobrará após a compra.">
+                <p class="preco" id="sorveteriaPreco" style="display: none;">
+                    <img src="imagens/icone.png" alt="Ícone" width="20" height="20"> 1000
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <button class="btn-volume"><i class="fas fa-volume-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>
